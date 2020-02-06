@@ -32,15 +32,16 @@ function doLogin() {
       "visibility: hidden;";
   }
 }
-function elem(a) {
-  return document.querySelector(a);
-}
-function openContainer(){
-  document.getElementsByClassName("cell")[0].onclick= function () {
-    if(document.getElementsByClassName("cell")[0].disabled = false){
-    elem(".container0").style.display = "none";
-    elem(".container1").style.display = "block";
-  }
+// function elem(a) {
+//   return document.querySelector(a);
+// }
+function openContainer() {
+  const openCon = document.getElementsByClassName("cell")[0];
+  openCon.onclick = function () {
+    if (openCon.disabled = false) {
+      document.getElementsByClassName(".container0").style.display = "none";
+      document.getElementsByClassName(".container1").style.display = "block";
+    }
   }
 }
 

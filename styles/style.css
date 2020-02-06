@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
     min-height: calc(100vh - 50px);
     padding: 20px;
-}
+    }
 
 .editor {
     /* min-width: 40px;
