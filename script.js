@@ -35,14 +35,9 @@ function doLogin() {
 // function elem(a) {
 //   return document.querySelector(a);
 // }
-function openContainer() {
-  const openCon = document.getElementsByClassName("cell")[0];
-  openCon.onclick = function () {
-    if (openCon.disabled = false) {
-      document.getElementsByClassName(".container0").style.display = "none";
-      document.getElementsByClassName(".container1").style.display = "block";
-    }
-  }
+function openContainer() {  
+      document.getElementsByClassName("container0")[0].style.display = "none";
+      document.getElementsByClassName("container1")[0].style.display = "block";    
 }
 
 function createTable() {
