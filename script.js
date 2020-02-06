@@ -1,0 +1,76 @@
+const setButtons = () => {};
+
+function addStyleToLorem(index, cssValue) {
+  const DOMContainer = document.querySelectorAll(index);
+  DOMContainer.forEach(DOMNode => DOMNode.setAttribute("style", cssValue));
+}
+
+function addStylefromModal(index, cssValue) {
+  this.addStyleToLorem(index, cssValue);
+  document.querySelector("button.close").click();
+}
+
+function doLogin() {
+  const login = document.getElementById("userLogin").value;
+  const psw = document.getElementById("userPassword").value;
+  if (login === "" || psw === "") {
+    document.getElementById("itemIsEmpty").style.cssText =
+      "visibility: visible;";
+    document.getElementById("itemNotValid").style.cssText =
+      "visibility: hidden;";
+  } else if (login !== "admin" || psw !== "admin") {
+    document.getElementById("itemNotValid").style.cssText =
+      "visibility: visible;";
+    document.getElementById("itemIsEmpty").style.cssText =
+      "visibility: hidden;";
+  } else {
+    document.getElementsByClassName("cell")[0].disabled = false;
+    $(".modal").modal("hide");
+    document.getElementById("itemIsEmpty").style.cssText =
+      "visibility: hidden;";
+    document.getElementById("itemNotValid").style.cssText =
+      "visibility: hidden;";
+  }
+}
+function elem(a) {
+  return document.querySelector(a);
+}
+function openContainer(){
+  document.getElementsByClassName("cell")[0].onclick= function () {
+    if(document.getElementsByClassName("cell")[0].disabled = false){
+    elem(".container0").style.display = "none";
+    elem(".container1").style.display = "block";
+  }
+  }
+}
+
+function createTable() {
+  const form = document.getElementById("tableForm").elements;
+  const tdStr = `<td style="width: ${form[1].value}px; height: ${form[5].value}px; border: ${form[2].value}px ${form[6].value} ${form[7].value}">TD</td>`;
+  const trStr = `<tr>${multiplyString(tdStr, form[4].value)}</tr>`;
+  const tblStr = `<table>${multiplyString(trStr, form[0].value)}</table>`;
+  const tableNode = document.createElement("p");
+  const tableTextnode = document.createTextNode(tblStr);
+  $(".modal").modal("hide");
+  tableNode.appendChild(tableTextnode);
+  document.getElementById("codePreview").appendChild(tableNode);
+  document.getElementById("loremBlock").innerHTML = tblStr;
+}
+
+function multiplyString(string, count) {
+  return string.repeat(count);
+}
+
+
+
+
+
+// function addStyleToLorem(cssValue) {
+//     const DOMContainer = document.querySelectorAll("#loremBlock p");
+//     DOMContainer.forEach(DOMNode => DOMNode.setAttribute("style", cssValue));
+// }
+
+// function addStylefromModal(cssValue) {
+//     this.addStyleToLorem(cssValue);
+//     document.querySelector("button.close").click();
+// }

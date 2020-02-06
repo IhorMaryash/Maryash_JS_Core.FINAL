@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="container0" >
+        <header class="header">
+            <div class="menubar">    
+                <div class="editor">
+                    <button type="button" class="cell" disabled>
+                        <i class="fas fa-code"></i>
+                    </button>
+                </div>
+                <div class="editor">
+                    <button type="button"
+                            class="cell"
+                            onclick="addStyleToLorem('#loremBlock p','font-weight: bold;')">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button type="button"
+                            class="cell"
+                            onclick="addStyleToLorem('#loremBlock p','font-style: italic;')">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button type="button"
+                            class="cell"
+                            onclick="addStyleToLorem('#loremBlock p','text-decoration: underline;')">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button type="button"
+                            class="cell"
+                            onclick="addStyleToLorem('#loremBlock p','text-decoration: line-through;')">
+                        <i class="fas fa-strikethrough"></i>
+                    </button>
+                </div>
+                <div class="editor">
+                    <button type="button" 
+                            class="cell" 
+                            onclick="addStyleToLorem('#loremBlock p','text-align: left;')">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button type="button" 
+                            class="cell" 
+                            onclick="addStyleToLorem('#loremBlock p','text-align: center;')">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button type="button" 
+                            class="cell" 
+                            onclick="addStyleToLorem('#loremBlock p','text-align: right;')">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                </div>
+                <!-- 4-th block -->
+                <div class="editor">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle cell"
+                                type="button"
+                                id="dropdownForFont"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="fas fa-font"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownForFont">
+                            <ul>
+                                <li style="font-family:Arial"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: italic;')">Arial</li>
+                                <li style="font-family:Georgia"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: Georgia;')">Georgia</li>
+                                <li style="font-family:Impact"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: Impact;')">Impact</li>
+                                <li style="font-family:Tachoma"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: Tachoma;')">Tachoma</li>
+                                <li style="font-family:Times New Roman"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: Times New Roman;')">Times New Roman</li>
+                                <li style="font-family:Verdana"
+                                    onclick="addStyleToLorem('#loremBlock p','font-family: Verdana;')">Verdana</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle cell"
+                                type="button"
+                                id="dropdownForTextSize"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="fas fa-text-height"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownForTextSize">
+                            <ul>
+                                <li style="font-size: 12px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 12px;')">12px</li>
+                                <li style="font-size: 14px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 14px;')">14px</li>
+                                <li style="font-size: 16px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 16px;')">16px</li>
+                                <li style="font-size: 18px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 18px;')">18px</li>
+                                <li style="font-size: 20px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 20px;')">20px</li>
+                                <li style="font-size: 22px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 22px;')">22px</li>
+                                <li style="font-size: 25px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 25px;')">25px</li>
+                                <li style="font-size: 30px;"
+                                    onclick="addStyleToLorem('#loremBlock p','font-size: 30px;')">30px</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" 
+                            class="cell"
+                            class="btn btn-primary"
+                            data-toggle="modal"
+                            data-target="#colorModal">
+                        <i class="fas fa-palette"></i>
+                    </button>
+                    <!-- modal window for collors -->
+                    <div class="modal fade" id="colorModal" tabindex="-1" role="dialog" aria-labelledby="colorModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Choose text color</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li class="block2 block"                                            
+                                        style="background-color:red;"
+                                        onclick="addStylefromModal('#loremBlock p','color: red;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:green;"
+                                        onclick="addStylefromModal('#loremBlock p','color: green;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:yellow;"
+                                        onclick="addStylefromModal('#loremBlock p','color: yellow;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:pink;"
+                                        onclick="addStylefromModal('#loremBlock p','color: pink;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:brown;"
+                                        onclick="addStylefromModal('#loremBlock p','color: brown;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:black;"
+                                        onclick="addStylefromModal('#loremBlock p','color: black;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:orange;"
+                                        onclick="addStylefromModal('#loremBlock p','color: orange;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:blue;"
+                                        onclick="addStylefromModal('#loremBlock p','color: blue;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:bisque;"
+                                        onclick="addStylefromModal('#loremBlock p','color: bisque;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:olive;"
+                                        onclick="addStylefromModal('#loremBlock p','color: olive;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:aqua;"
+                                        onclick="addStylefromModal('color: aqua;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color: darkcyan;"
+                                        onclick="addStylefromModal('#loremBlock p','color: darkcyan;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:salmon;"
+                                        onclick="addStylefromModal('#loremBlock p','color: salmon;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:purple;"
+                                        onclick="addStylefromModal('#loremBlock p','color: purple;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:orchid;"
+                                        onclick="addStylefromModal('#loremBlock p','color: orchid;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:coral;"
+                                        onclick="addStylefromModal('#loremBlock p','color: coral;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:crimson;"
+                                        onclick="addStylefromModal('#loremBlock p','color: crimson;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:indigo;"
+                                        onclick="addStylefromModal('#loremBlock p','color: indigo;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:violet;"
+                                        onclick="addStylefromModal('#loremBlock p','color: violet;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:maroon;"
+                                        onclick="addStylefromModal('#loremBlock p','color: maroon;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:grey;"
+                                        onclick="addStylefromModal('#loremBlock p','color: grey;')"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" 
+                            class="cell"
+                            class="btn btn-primary"                            
+                            data-toggle="modal"
+                            data-target="#colorModal">
+                        <i class="far fa-image"></i>
+                    </button>
+                     <!-- modal window for background -->
+                     <div class="modal fade" !important id="colorModal" tabindex="-1" role="dialog" aria-labelledby="colorModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabe">Choose background color color or image</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                   
+                                    <!-- <div class="bgchooser">
+                                        <button type="button" id="bgColor" value="Colors">Colors</button>
+                                        <button type="button" id="bgColor" value="Images">Images</button>
+                                        <button type="button" id="bgColor" value="Files">Files</button>                                        
+                                    </div> -->
+                                </div>
+                                <div class="modal-body">
+                                     <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link disabled" href="#">Disabled</a>
+                                        </li>
+                                      </ul>
+
+                                    <ul>
+                                        <li class="block2 block"
+                                        style="background-color:red;"
+                                        onclick="addStylefromModal('#bodyarea','background-color: red;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:green;"
+                                           onclick="addStylefromModal('#bodyarea','background-color: green;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:yellow;"
+                                        onclick="addStylefromModal('#bodyarea','background-color: yellow;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:pink;"
+                                        onclick="addStylefromModal('#bodyarea','background-color: pink;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:brown;"
+                                        onclick="addStylefromModal('#bodyarea','background-color: brown;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:black;"
+                                        onclick="addStylefromModal('#bodyarea','background-color: black;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:orange;"
+                                        onclick="addStylefromModal('color: orange;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:blue;"
+                                        onclick="addStylefromModal('color: blue;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:bisque;"
+                                        onclick="addStylefromModal('color: bisque;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:olive;"
+                                        onclick="addStylefromModal('color: olive;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:aqua;"
+                                        onclick="addStylefromModal('color: aqua;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color: darkcyan;"
+                                        onclick="addStylefromModal('color: darkcyan;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:salmon;"
+                                        onclick="addStylefromModal('color: salmon;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:purple;"
+                                        onclick="addStylefromModal('color: purple;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:orchid;"
+                                        onclick="addStylefromModal('color: orchid;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:coral;"
+                                        onclick="addStylefromModal('color: coral;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:crimson;"
+                                        onclick="addStylefromModal('color: crimson;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:indigo;"
+                                        onclick="addStylefromModal('color: indigo;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:violet;"
+                                        onclick="addStylefromModal('color: violet;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:maroon;"
+                                        onclick="addStylefromModal('color: maroon;')"></li>
+                                        <li class="block2 block"
+                                        style="background-color:grey;"
+                                        onclick="addStylefromModal('color: grey;')"></li>
+                                    </ul>
+                                    <div class="textColor imgbg" id="">
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                        <p class="imgchooser"></p>
+                                    </div>
+                                    <div class="input-group textColor">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile" accept="image/*">
+                                            <label class="btn-file custom-file-label" for="inputGroupFile">
+                                                <span class="custom-file-label">Choose file</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor">
+                    <button type="button"
+                            class="cell"
+                            data-toggle="modal"
+                            data-target="#loginModal">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" 
+                                                   class="form-control"
+                                                   id="userLogin"
+                                                   aria-describedby="emailHelp"
+                                                   placeholder="Login here">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" 
+                                                    class="form-control"
+                                                    id="userPassword"
+                                                    placeholder="Password here">
+                                                    <small id="itemIsEmpty"
+                                                           class="form-text text-muted form-error"
+                                                           style="visibility: hidden;" >
+                                                        Value is empty
+                                                    </small>
+                                                    <small id="itemNotValid"
+                                                           class="form-text form-error"
+                                                           style="visibility: hidden;">
+                                                        Please check your login or password
+                                                    </small>
+                                        </div>
+                                        <button type="button"
+                                                class="btn btn-primary"
+                                                onclick="doLogin()">
+                                            Sign In
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                <div class="textBgBar textColorEditor" style="display: none;">
+                    <input type="button" class=""></input>
+                    <p class="chooser">Choose background color or image</p>
+                    <p class="cross"></p>
+                    <div class="bgchooser">
+                        <input type="button" id="bgColor" value="Colors">
+                        <input type="button" id="bgColor" value="Images">
+                        <input type="button" id="bgColor" value="Files">
+                    </div>
+                    <div class="textColor colorbarBg" id="textbgc">
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                        <p class="block2 block"></p>
+                    </div>
+                    <div class="textColor imgbg" id="">
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                        <p class="imgchooser"></p>
+                    </div>
+                    <div class="input-group textColor">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile" accept="image/*">
+                            <label class="btn-file custom-file-label" for="inputGroupFile">
+                                <span class="custom-file-label">Choose file</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="SignIn textColorEditor" style="display: none;">
+                    <p>Sign In</p>
+                    <hr>
+                    <form action="userform1">
+                        <input type="text" class="sign " placeholder="login here...">
+                        <input type="password" class="sign " placeholder="login here...">
+                        <p class="mistakeInput"></p>
+                        <input type="button" class="signbutton" value="Sign In">
+                    </form>
+                </div> -->
+            </div>
+        </header>
+        <div class="bodyarea bodyarea1" id="bodyarea">
+            <div id="loremBlock">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <header class="header">
+            <div class="menubar">
+                <div class="editor textEditor6">
+                    <button type="button" 
+                            class="cell" 
+                            onclick="">
+                        <i class="fas fa-save"></i>
+                    </button>
+                    <button type="button" 
+                            class="cell"
+                            data-toggle="modal"
+                            data-target=".bd-example-modal-lg">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button type="button" 
+                        class="cell"
+                        class="btn btn-primary"
+                        data-toggle="modal"
+                        data-target="#colorModal"
+                        onclick="">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button type="button" 
+                        class="cell"
+                        class="btn btn-primary"
+                        data-toggle="modal"
+                        data-target="#tableModal"
+                        onclick="">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- modal window for table creation -->
+            <div class="modal fade bd-example-modal-lg" 
+                 tabindex="-1" 
+                 role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create table</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body container">
+                            <form id="tableForm" class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="userLogin">Count TR:</label>
+                                        <input type="number" 
+                                               class="form-control"
+                                               id="trNumber"
+                                               aria-describedby="emailHelp"
+                                               placeholder="Type here"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tdWidth">Width of TD:</label>
+                                        <input type="number" 
+                                               class="form-control"
+                                               id="tdWidth"
+                                               aria-describedby="emailHelp"
+                                               placeholder="Type here"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="borderWidth">Width of border:</label>
+                                        <input type="number" 
+                                                class="form-control"
+                                                id="borderWidth"
+                                                placeholder="Type here"
+                                                required>
+                                    </div>
+                                    <button type="button"
+                                            class="modal-button btn btn-danger"
+                                            onclick="doLogin()">
+                                        Reset
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="tdCount">Count TD:</label>
+                                        <input type="number" 
+                                               class="form-control"
+                                               id="tdCount"
+                                               aria-describedby="emailHelp"
+                                               placeholder="Type here"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tdHeight">Height of TD:</label>
+                                        <input type="number" 
+                                                class="form-control"
+                                                id="tdHeight"
+                                                placeholder="Type here"
+                                                required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group dropdown">
+                                            <label for="dropdownForBorderStyle">Style for border:</label>
+                                            <select class="custom-select" id="dropdownForBorderStyle" required>
+                                                <option selected>Choose style</option>
+                                                <option value="dotted">dotted</option>
+                                                <option value="dashed">dashed</option>
+                                                <option value="solid">solid</option>
+                                                <option value="double">double</option>
+                                                <option value="groove">groove</option>
+                                                <option value="ridge">ridge</option>
+                                                <option value="inset">inset</option>
+                                                <option value="outset">outset</option>
+                                            </select>
+                                        </div>
+                                        <div class="col form-group dropdown">
+                                            <label for="dropdownForBorderColor">Color for bprder:</label>
+                                            <select class="custom-select" id="dropdownForBorderColor" required>
+                                                <option selected>Choose style</option>
+                                                <option value="black">black</option>
+                                                <option value="red">red</option>
+                                                <option value="green">green</option>
+                                                <option value="blue">blue</option>
+                                                <option value="yellow">yellow</option>
+                                                <option value="white">white</option>
+                                                <option value="gray">gray</option>
+                                                <option value="pink">pink</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                            class="modal-button btn btn-success"
+                                            onclick="createTable()">
+                                        Create table
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="codePreview" class="bodyarea bodyarea2">
+            <textarea name=""></textarea>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/d86786a1d9.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
