@@ -60,6 +60,29 @@ function multiplyString(string, count) {
   return string.repeat(count);
 }
 
+ function createUl() {
+   const form1 = document.getElementById("tableForm").elements;
+   const liStr = `<li>item ${form1[0].value}</li>`;
+   const ulStr = `<ul type="${form1[1].value}">${multiplyString(liStr, form1[0].value)}</ul>`;
+   const ulNode = document.createElement("p");
+   const ulTextnode = document.createTextNode(ulStr);
+   $(".modal").modal("hide");
+   ulNode.appendChild(ulTextnode);
+   document.getElementById("codePreview").appendChild(ulNode);
+   document.getElementById("pushBlock").innerHTML = ulStr;
+ }
+
+ function createOl() {
+  const form2 = document.getElementById("tableForm").elements;
+  const liStr = `<li>item ${form2[0].value}</li>`;
+  const olStr = `<ol type="${form2[1].value}">${multiplyString(liStr, form2[0].value)}</ol>`;
+  const ulNode = document.createElement("p");
+  const olTextnode = document.createTextNode(olStr);
+  $(".modal").modal("hide");
+  ulNode.appendChild(olTextnode);
+  document.getElementById("codePreview").appendChild(olNode);
+  document.getElementById("pushBlock").innerHTML = olStr;
+}
 
 
 
