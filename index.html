@@ -221,9 +221,7 @@
                                     <h5 class="modal-title" id="exampleModalLabe">Choose background color color or image</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
-                                    </button>
-
-                                   
+                                    </button>                                   
                                     <!-- <div class="bgchooser">
                                         <button type="button" id="bgColor" value="Colors">Colors</button>
                                         <button type="button" id="bgColor" value="Images">Images</button>
@@ -404,70 +402,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 
-                <div class="textBgBar textColorEditor" style="display: none;">
-                    <input type="button" class=""></input>
-                    <p class="chooser">Choose background color or image</p>
-                    <p class="cross"></p>
-                    <div class="bgchooser">
-                        <input type="button" id="bgColor" value="Colors">
-                        <input type="button" id="bgColor" value="Images">
-                        <input type="button" id="bgColor" value="Files">
-                    </div>
-                    <div class="textColor colorbarBg" id="textbgc">
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                        <p class="block2 block"></p>
-                    </div>
-                    <div class="textColor imgbg" id="">
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                        <p class="imgchooser"></p>
-                    </div>
-                    <div class="input-group textColor">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile" accept="image/*">
-                            <label class="btn-file custom-file-label" for="inputGroupFile">
-                                <span class="custom-file-label">Choose file</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="SignIn textColorEditor" style="display: none;">
-                    <p>Sign In</p>
-                    <hr>
-                    <form action="userform1">
-                        <input type="text" class="sign " placeholder="login here...">
-                        <input type="password" class="sign " placeholder="login here...">
-                        <p class="mistakeInput"></p>
-                        <input type="button" class="signbutton" value="Sign In">
-                    </form>
-                </div> -->
             </div>
         </header>
         <div class="bodyarea bodyarea1" id="bodyarea">
@@ -481,8 +415,7 @@
             </div>
             <div id="pushBlock" name="">            
             </div>
-        </div>
-        
+        </div>        
     </div>
     <div class="container1">
         <header class="header">
@@ -625,8 +558,115 @@
                     </div>
                 </div>
             </div>
+        <!-- modal window for ul creation -->
+        <div class="modal fade bd-example-modal-lg" 
+            tabindex="-1" 
+            role="dialog"
+            aria-hidden="true">
+           <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Create ul</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                       </button>
+                   </div>
+                   <div class="modal-body container"> 
+                        <form id="ulForm" class="">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="userLogin">Count li item:</label>
+                                    <input type="number" 
+                                           class="form-control"
+                                           id="liNumber"
+                                           aria-describedby="emailHelp"
+                                           placeholder="Type here"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col form-group dropdown">
+                                    <label for="">Type mark of list:</label>
+                                    <select class="custom-select" id="" required>
+                                        <option selected>Choose Ul type mark</option>
+                                        <option value="circle">circle</option>
+                                        <option value="disk">disk</option>
+                                        <option value="square">square</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button"
+                                    class="modal-button btn btn-danger"
+                                    onclick="">
+                             Reset
+                            </button>
+                            <button type="button"
+                                    class="modal-button btn btn-success"
+                                    onclick="createUl()">
+                            Create Ul
+                             </button>
+                        </form>                     
+                   </div>
+                </div> 
+            </div>  
+        </div>      
+         <!-- modal window for ol creation -->
+         <div class="modal fade bd-example-modal-lg" 
+            tabindex="-1" 
+            role="dialog"
+            aria-hidden="true">
+           <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Create ol</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                       </button>
+                   </div>
+                   <div class="modal-body container"> 
+                        <form id="olForm" class="">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="userLogin">Count li item:</label>
+                                    <input type="number" 
+                                           class="form-control"
+                                           id="liNumber"
+                                           aria-describedby="emailHelp"
+                                           placeholder="Type here"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col form-group dropdown">
+                                    <label for="">Type mark of list:</label>
+                                    <select class="custom-select" id="" required>
+                                        <option selected>Choose Ol type mark</option>
+                                        <option value="1">1</option>
+                                        <option value="I">I</option>
+                                        <option value="A">A</option>
+                                        <option value="i">i</option>
+                                        <option value="a">a</option>                                                                            
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button"
+                                    class="modal-button btn btn-danger"
+                                    onclick="">
+                             Reset
+                            </button>
+                            <button type="button"
+                                    class="modal-button btn btn-success"
+                                    onclick="createOl()">
+                            Create Ol
+                             </button>
+                        </form>                     
+                   </div>
+                </div> 
+            </div>  
+        </div>      
         </header>
         <div id="codePreview" class="bodyarea bodyarea2">
+            <textarea name=""></textarea>
         </div>
     </div>
 
