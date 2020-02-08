@@ -61,7 +61,7 @@ function multiplyString(string, count) {
 }
 
  function createUl() {
-   const form1 = document.getElementById("tableForm").elements;
+   const form1 = document.getElementById("ulForm").elements;
    const liStr = `<li>item ${form1[0].value}</li>`;
    const ulStr = `<ul type="${form1[1].value}">${multiplyString(liStr, form1[0].value)}</ul>`;
    const ulNode = document.createElement("p");
@@ -73,7 +73,7 @@ function multiplyString(string, count) {
  }
 
  function createOl() {
-  const form2 = document.getElementById("tableForm").elements;
+  const form2 = document.getElementById("olForm").elements;
   const liStr = `<li>item ${form2[0].value}</li>`;
   const olStr = `<ol type="${form2[1].value}">${multiplyString(liStr, form2[0].value)}</ol>`;
   const ulNode = document.createElement("p");
