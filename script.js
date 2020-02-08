@@ -32,12 +32,15 @@ function doLogin() {
       "visibility: hidden;";
   }
 }
-// function elem(a) {
-//   return document.querySelector(a);
-// }
-function openContainer() {  
-      document.getElementsByClassName("container0")[0].style.display = "none";
-      document.getElementsByClassName("container1")[0].style.display = "block";    
+
+function switchContainer() { 
+  document.getElementsByClassName("container0")[0].style.display = "none";
+  document.getElementsByClassName("container1")[0].style.display = "block";
+}
+
+function switchContainer1() {
+  document.getElementsByClassName("container0")[0].style.display = "block";
+  document.getElementsByClassName("container1")[0].style.display = "none";
 }
 
 function createTable() {
@@ -50,7 +53,7 @@ function createTable() {
   $(".modal").modal("hide");
   tableNode.appendChild(tableTextnode);
   document.getElementById("codePreview").appendChild(tableNode);
-  document.getElementById("loremBlock").innerHTML = tblStr;
+  document.getElementById("pushBlock").innerHTML = tblStr;
 }
 
 function multiplyString(string, count) {
@@ -69,4 +72,16 @@ function multiplyString(string, count) {
 // function addStylefromModal(cssValue) {
 //     this.addStyleToLorem(cssValue);
 //     document.querySelector("button.close").click();
+// }
+
+
+
+// function switchContainer() { 
+//   if(document.getElementsByClassName("cell")[0]) {
+//       document.getElementsByClassName("container0")[0].style.display = "none";
+//       document.getElementsByClassName("container1")[0].style.display = "block"; 
+//     }else if(document.getElementsByClassName("cell")[13]){ //якщо onclick="switchContainer()"
+//       document.getElementsByClassName("container0")[0].style.display = "block";
+//       document.getElementsByClassName("container1")[0].style.display = "none"; 
+//     }   
 // }

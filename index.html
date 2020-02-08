@@ -17,7 +17,7 @@
             <div class="menubar">    
                 <div class="editor">
                     <button type="button" class="cell" disabled
-                    onclick="openContainer()">                        
+                    onclick="switchContainer()">                        
                         <i class="fas fa-code"></i>
                     </button>
                 </div>
@@ -311,33 +311,33 @@
                                         style="background-color:grey;"
                                         onclick="addStylefromModal('#bodyarea','background-color: grey;')"></li>
                                     </ul>
-                                    <ul> class="textColor imgbg" id="">
+                                    <ul class="textColor imgbg" id="">
                                         <li class="block2 block"
-                                        style="background-color:red;"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
-                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li> 
-                                        <li class="block2 block"
-                                        style="background-color:red;"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
-                                        <p class="imgchooser"></p> <li class="block2 block"
-                                        style="background-color:red;"
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
+                                        <li class="block2 block"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         
                                     </ul>>
@@ -384,7 +384,7 @@
                                                     placeholder="Password here">
                                                     <small id="itemIsEmpty"
                                                            class="form-text text-muted form-error"
-                                                           style="visibility: hidden;" >
+                                                           style="visibility: hidden;">
                                                         Value is empty
                                                     </small>
                                                     <small id="itemNotValid"
@@ -479,7 +479,10 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sunt.</p>
             </div>
+            <div id="pushBlock" name="">            
+            </div>
         </div>
+        
     </div>
     <div class="container1">
         <header class="header">
@@ -487,7 +490,8 @@
                 <div class="editor textEditor6">
                     <button type="button" 
                             class="cell" 
-                            onclick="">
+                            id="cell13"
+                            onclick="switchContainer1()">
                         <i class="fas fa-save"></i>
                     </button>
                     <button type="button" 
@@ -596,7 +600,7 @@
                                             </select>
                                         </div>
                                         <div class="col form-group dropdown">
-                                            <label for="dropdownForBorderColor">Color for bprder:</label>
+                                            <label for="dropdownForBorderColor">Color for border:</label>
                                             <select class="custom-select" id="dropdownForBorderColor" required>
                                                 <option selected>Choose style</option>
                                                 <option value="black">black</option>
@@ -623,7 +627,6 @@
             </div>
         </header>
         <div id="codePreview" class="bodyarea bodyarea2">
-            <textarea name=""></textarea>
         </div>
     </div>
 
