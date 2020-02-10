@@ -270,7 +270,10 @@
 .custom-file {
     width: 100%;
 }
-
+#codePreview{
+width: 60%;
+min-height: calc(100vh - 70px);
+}
 
 .container0 {
     display: block;
@@ -283,21 +286,4 @@
 /* .container1 {
     display: none;
 } */
-/* 
-.save {
-    background-image: url(img/icon11.png);
-}
-
-.table {
-    background-image: url(img/icon25tb.png);
-}
-
-.ul {
-    background-image: url(img/icon18ul.png);
-}
-
-.ol {
-    background-image: url(img/icon19ol.png);
-} */
-
 

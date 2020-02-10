@@ -1,4 +1,4 @@
-const setButtons = () => {};
+const setButtons = () => { };
 
 function addStyleToLorem(index, cssValue) {
   const DOMContainer = document.querySelectorAll(index);
@@ -33,7 +33,7 @@ function doLogin() {
   }
 }
 
-function switchContainer() { 
+function switchContainer() {
   document.getElementsByClassName("container0")[0].style.display = "none";
   document.getElementsByClassName("container1")[0].style.display = "block";
 }
@@ -52,40 +52,45 @@ function createTable() {
   const tableTextnode = document.createTextNode(tblStr);
   $(".modal").modal("hide");
   tableNode.appendChild(tableTextnode);
-  document.getElementById("codePreview").appendChild(tableNode);
-  document.getElementById("pushBlock").innerHTML = tblStr;
+  document.getElementById("codePreview").value += `${tblStr}`;
+  document.getElementById("pushBlock").appendChild(tableNode).innerHTML = tblStr;
 }
 
 function multiplyString(string, count) {
   return string.repeat(count);
 }
 
- function createUl() {
-   const form1 = document.getElementById("ulForm").elements;
-   const liStr = `<li>item ${form1[0].value}</li>`;
-   const ulStr = `<ul type="${form1[1].value}">${multiplyString(liStr, form1[0].value)}</ul>`;
-   const ulNode = document.createElement("p");
-   const ulTextnode = document.createTextNode(ulStr);
-   $(".modal").modal("hide");
-   ulNode.appendChild(ulTextnode);
-   document.getElementById("codePreview").appendChild(ulNode);
-   document.getElementById("pushBlock").innerHTML = ulStr;
- }
-
- function createOl() {
-  const form2 = document.getElementById("olForm").elements;
-  const liStr = `<li>item ${form2[0].value}</li>`;
-  const olStr = `<ol type="${form2[1].value}">${multiplyString(liStr, form2[0].value)}</ol>`;
-  const ulNode = document.createElement("p");
-  const olTextnode = document.createTextNode(olStr);
+function createUlOrOl(type) {
+  const form = document.getElementById(`${type}Form`).elements;
+  const liWrap = `<${type} type="${form[1].value}">${createLiString(form[0].value)}</${type}>`;
+  const listNode = document.createElement("p");
+  const ulTextnode = document.createTextNode(liWrap);
   $(".modal").modal("hide");
-  ulNode.appendChild(olTextnode);
-  document.getElementById("codePreview").appendChild(olNode);
-  document.getElementById("pushBlock").innerHTML = olStr;
+  listNode.appendChild(ulTextnode);
+  console.log(document.getElementById("codePreview").value)
+  document.getElementById("codePreview").value += `${liWrap}`;
+  document.getElementById("pushBlock").appendChild(listNode).innerHTML = liWrap;
 }
 
+function createLiString(counter) {
+  let initString = '';
+  for (i = 1; i <= counter; i++) {
+    initString += `<li>item ${i}</li>`;
+  }
+  return initString;
+}
 
-
+function resetModal(type) {
+  const modalElements = document.querySelector(`#${type}Form`).elements;
+  const nodesArray = [];
+  for (i = 0; i < modalElements.length; i++) {
+    if (modalElements[i].className === "custom-select") {
+      nodesArray.push((modalElements[i].value = "Choose style"));
+    } else {
+      nodesArray.push((modalElements[i].value = null));
+    }
+  }
+}
 
 // function addStyleToLorem(cssValue) {
 //     const DOMContainer = document.querySelectorAll("#loremBlock p");
@@ -97,14 +102,12 @@ function multiplyString(string, count) {
 //     document.querySelector("button.close").click();
 // }
 
-
-
-// function switchContainer() { 
+// function switchContainer() {
 //   if(document.getElementsByClassName("cell")[0]) {
 //       document.getElementsByClassName("container0")[0].style.display = "none";
-//       document.getElementsByClassName("container1")[0].style.display = "block"; 
+//       document.getElementsByClassName("container1")[0].style.display = "block";
 //     }else if(document.getElementsByClassName("cell")[13]){ //якщо onclick="switchContainer()"
 //       document.getElementsByClassName("container0")[0].style.display = "block";
-//       document.getElementsByClassName("container1")[0].style.display = "none"; 
-//     }   
+//       document.getElementsByClassName("container1")[0].style.display = "none";
+//     }
 // }

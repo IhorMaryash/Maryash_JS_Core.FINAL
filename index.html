@@ -130,7 +130,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Choose text color</h5>
+                                    <h5 class="modal-title">Choose text color</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -205,16 +205,15 @@
                             </div>
                         </div>
                     </div>
-
                     <button type="button" 
                             class="cell"
                             class="btn btn-primary"                            
                             data-toggle="modal"
-                            data-target="#colorModal">
+                            data-target="#backgroundModal">
                         <i class="far fa-image"></i>
                     </button>
                      <!-- modal window for background -->
-                     <div class="modal fade" !important id="colorModal" tabindex="-1" role="dialog" aria-labelledby="colorModalLabel" aria-hidden="true">
+                     <div class="modal fade" !important id="backgroundModal" tabindex="-1" role="dialog" aria-labelledby="colorModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -222,29 +221,20 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>                                   
-                                    <!-- <div class="bgchooser">
-                                        <button type="button" id="bgColor" value="Colors">Colors</button>
-                                        <button type="button" id="bgColor" value="Images">Images</button>
-                                        <button type="button" id="bgColor" value="Files">Files</button>                                        
-                                    </div> -->
                                 </div>
-                                <div class="modal-body">
-                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                          <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link" href="#">Link</a>
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link disabled" href="#">Disabled</a>
-                                        </li>
-                                      </ul>
-
-                                    <ul>
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                      <a class="nav-link active" href="#backgroundColor">Color</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#backgroundImage">Image</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#backgroundFile">File</a>
+                                    </li>                                       
+                                  </ul>
+                                <div class="modal-body">                                     
+                                    <ul href="#backgroundColor">
                                         <li class="block2 block"
                                         style="background-color:red;"
                                         onclick="addStylefromModal('#bodyarea','background-color: red;')"></li>
@@ -309,37 +299,37 @@
                                         style="background-color:grey;"
                                         onclick="addStylefromModal('#bodyarea','background-color: grey;')"></li>
                                     </ul>
-                                    <ul class="textColor imgbg" id="">
+                                    <ul class="textColor imgbg" id="" href="#backgroundImage">
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         <li class="block2 block"
-                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)');"
+                                        style="background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg);"
                                         onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/206/winter-wallpaper-1366x768.jpg)')"></li>
                                         
-                                    </ul>>
-                                    <div class="input-group textColor">
+                                    </ul>
+                                    <div href="#backgroundImage" class="input-group textColor">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile" accept="image/*">
                                             <label class="btn-file custom-file-label" for="inputGroupFile">
@@ -360,11 +350,17 @@
                             data-target="#loginModal">
                         <i class="fas fa-lock"></i>
                     </button>
-                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <!-- Login Modal -->
+                    <div class="modal fade"
+                         id="loginModal"
+                         tabindex="-1"
+                         role="dialog"
+                         aria-labelledby="loginModalLabel"
+                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                                    <h5 class="modal-title">Sign In</h5>
                                 </div>
                                 <div class="modal-body">
                                     <form>
@@ -430,36 +426,34 @@
                     <button type="button" 
                             class="cell"
                             data-toggle="modal"
-                            data-target=".bd-example-modal-lg">
+                            data-target="#createTableModal">
                         <i class="fas fa-table"></i>
                     </button>
                     <button type="button" 
-                        class="cell"
-                        class="btn btn-primary"
-                        data-toggle="modal"
-                        data-target="#colorModal"
-                        onclick="">
+                            class="cell"
+                            class="btn btn-primary"
+                            data-toggle="modal"
+                            data-target="#createUlModal">
                         <i class="fas fa-list-ul"></i>
                     </button>
                     <button type="button" 
-                        class="cell"
-                        class="btn btn-primary"
-                        data-toggle="modal"
-                        data-target="#tableModal"
-                        onclick="">
+                            class="cell"
+                            class="btn btn-primary"
+                            data-toggle="modal"
+                            data-target="#createOlModal">
                         <i class="fas fa-list-ol"></i>
                     </button>
                 </div>
             </div>
             <!-- modal window for table creation -->
-            <div class="modal fade bd-example-modal-lg" 
+            <div id="createTableModal" class="modal fade bd-example-modal-lg" 
                  tabindex="-1" 
                  role="dialog"
                  aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Create table</h5>
+                            <h5 class="modal-title">Create table</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -495,7 +489,7 @@
                                     </div>
                                     <button type="button"
                                             class="modal-button btn btn-danger"
-                                            onclick="doLogin()">
+                                            onclick="resetModal('table')">
                                         Reset
                                     </button>
                                 </div>
@@ -521,7 +515,7 @@
                                         <div class="col form-group dropdown">
                                             <label for="dropdownForBorderStyle">Style for border:</label>
                                             <select class="custom-select" id="dropdownForBorderStyle" required>
-                                                <option selected>Choose style</option>
+                                                <option value="Choose style" selected>Choose style</option value="Choose style">
                                                 <option value="dotted">dotted</option>
                                                 <option value="dashed">dashed</option>
                                                 <option value="solid">solid</option>
@@ -535,7 +529,7 @@
                                         <div class="col form-group dropdown">
                                             <label for="dropdownForBorderColor">Color for border:</label>
                                             <select class="custom-select" id="dropdownForBorderColor" required>
-                                                <option selected>Choose style</option>
+                                                <option value="Choose style" selected>Choose style</optionvalue="black">
                                                 <option value="black">black</option>
                                                 <option value="red">red</option>
                                                 <option value="green">green</option>
@@ -558,121 +552,119 @@
                     </div>
                 </div>
             </div>
-        <!-- modal window for ul creation -->
-        <div class="modal fade bd-example-modal-lg" 
-            tabindex="-1" 
-            role="dialog"
-            aria-hidden="true">
-           <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                   <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel">Create ul</h5>
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                       </button>
-                   </div>
-                   <div class="modal-body container"> 
-                        <form id="ulForm" class="">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="userLogin">Count li item:</label>
-                                    <input type="number" 
-                                           class="form-control"
-                                           id="liNumber"
-                                           aria-describedby="emailHelp"
-                                           placeholder="Type here"
-                                           required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col form-group dropdown">
-                                    <label for="">Type mark of list:</label>
-                                    <select class="custom-select" id="" required>
-                                        <option selected>Choose Ul type mark</option>
-                                        <option value="circle">circle</option>
-                                        <option value="disc">disc</option>
-                                        <option value="square">square</option>                                        
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="button"
-                                    class="modal-button btn btn-danger"
-                                    onclick="">
-                             Reset
+            <!-- modal window for ul creation -->
+            <div id="createUlModal" class="modal fade bd-example-modal-lg" 
+                tabindex="-1" 
+                role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create ul</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                             </button>
-                            <button type="button"
-                                    class="modal-button btn btn-success"
-                                    onclick="createUl()">
-                            Create Ul
-                             </button>
-                        </form>                     
-                   </div>
-                </div> 
-            </div>  
-        </div>      
-         <!-- modal window for ol creation -->
-         <div class="modal fade bd-example-modal-lg" 
-            tabindex="-1" 
-            role="dialog"
-            aria-hidden="true">
-           <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                   <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel">Create ol</h5>
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                       </button>
-                   </div>
-                   <div class="modal-body container"> 
-                        <form id="olForm" class="">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="userLogin">Count li item:</label>
-                                    <input type="number" 
-                                           class="form-control"
-                                           id="liNumber"
-                                           aria-describedby="emailHelp"
-                                           placeholder="Type here"
-                                           required>
+                        </div>
+                        <div class="modal-body container"> 
+                            <form id="ulForm" class="">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="userLogin">Count li item:</label>
+                                        <input type="number" 
+                                            class="form-control"
+                                            id="ulLiNumber"
+                                            aria-describedby="emailHelp"
+                                            placeholder="Type here"
+                                            required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col form-group dropdown">
-                                    <label for="">Type mark of list:</label>
-                                    <select class="custom-select" id="" required>
-                                        <option selected>Choose Ol type mark</option>
-                                        <option value="1">1</option>
-                                        <option value="I">I</option>
-                                        <option value="A">A</option>
-                                        <option value="i">i</option>
-                                        <option value="a">a</option>                                                                            
-                                    </select>
+                                <div class="row">
+                                    <div class="col form-group dropdown">
+                                        <label for="">Type mark of list:</label>
+                                        <select class="custom-select" id="" required>
+                                            <option selected>Choose Ul type mark</option>
+                                            <option value="circle">circle</option>
+                                            <option value="disc">disc</option>
+                                            <option value="square">square</option>                                        
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <button type="button"
-                                    class="modal-button btn btn-danger"
-                                    onclick="">
-                             Reset
+                                <button type="button"
+                                        class="modal-button btn btn-danger"
+                                        onclick="resetModal('ul')">
+                                    Reset
+                                </button>
+                                <button type="button"
+                                        class="modal-button btn btn-success"
+                                        onclick="createUlOrOl('ul')">
+                                    Create Ul
+                                </button>
+                            </form>                     
+                        </div>
+                    </div> 
+                </div>  
+            </div>      
+            <!-- modal window for ol creation -->
+            <div id="createOlModal" class="modal fade bd-example-modal-lg" 
+                tabindex="-1" 
+                role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create ol</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
                             </button>
-                            <button type="button"
-                                    class="modal-button btn btn-success"
-                                    onclick="createOl()">
-                            Create Ol
-                             </button>
-                        </form>                     
-                   </div>
+                        </div>
+                        <div class="modal-body container"> 
+                            <form id="olForm" class="">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="userLogin">Count li item:</label>
+                                        <input type="number" 
+                                            class="form-control"
+                                            id="olLiNumber"
+                                            aria-describedby="emailHelp"
+                                            placeholder="Type here"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col form-group dropdown">
+                                        <label for="">Type mark of list:</label>
+                                        <select class="custom-select" id="" required>
+                                            <option selected>Choose Ol type mark</option>
+                                            <option value="1">1</option>
+                                            <option value="I">I</option>
+                                            <option value="A">A</option>
+                                            <option value="i">i</option>
+                                            <option value="a">a</option>                                                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button"
+                                        class="modal-button btn btn-danger"
+                                        onclick="resetModal('ol')">
+                                Reset
+                                </button>
+                                <button type="button"
+                                        class="modal-button btn btn-success"
+                                        onclick="createUlOrOl('ol')">
+                                Create Ol
+                                </button>
+                            </form>                     
+                        </div>
+                    </div>  
                 </div> 
-            </div>  
-        </div>      
+            </div>     
         </header>
-        <div id="codePreview" class="bodyarea bodyarea2">
-            <textarea name=""></textarea>
+        <div class="bodyarea bodyarea2">
+            <textarea id="codePreview" name=""></textarea>
         </div>
     </div>
 
     <script src="https://kit.fontawesome.com/d86786a1d9.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
