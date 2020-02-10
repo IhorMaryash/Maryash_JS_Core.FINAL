@@ -36,11 +36,13 @@ function doLogin() {
 function switchContainer() {
   document.getElementsByClassName("container0")[0].style.display = "none";
   document.getElementsByClassName("container1")[0].style.display = "block";
+  document.getElementById("codePreview") = document.getElementById("loremBlock").innerHTML.value;
 }
 
 function switchContainer1() {
   document.getElementsByClassName("container0")[0].style.display = "block";
   document.getElementsByClassName("container1")[0].style.display = "none";
+  document.getElementById("pushBlock") = document.getElementById("codePreview").innerHTML.value;
 }
 
 function createTable() {

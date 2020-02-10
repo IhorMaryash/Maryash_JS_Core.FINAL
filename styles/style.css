@@ -213,10 +213,22 @@
     height: 50px;
     border-radius: 5px;
 }
+
+
+.image-bg {
+    width: 100px;
+    height: 70px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.block>li,
 .modal-body>ul{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;    
+    flex-wrap: wrap; 
+    list-style-type: none;   
 }
 
 .modal-body>ul>li{
@@ -227,13 +239,13 @@
     
 }
 
-.cross {
+/* .cross {
     width: 30px;
     height: 30px;
     background-image: url(img/1.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-}
+} */
 
 .chooser {
     width: 300px;
