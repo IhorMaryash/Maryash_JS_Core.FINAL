@@ -55,6 +55,10 @@
     border-radius: 5px;
 }
 
+.imgbg{
+    display: flex;
+    justify-content: space-between;
+}
 
 .image-bg {
     width: 100px;

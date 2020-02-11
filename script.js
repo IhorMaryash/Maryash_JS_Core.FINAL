@@ -1,4 +1,4 @@
-const setButtons = () => { };
+const setButtons = () => {};
 
 function addStyleToLorem(index, cssValue) {
   const DOMContainer = document.querySelectorAll(index);
@@ -34,16 +34,17 @@ function doLogin() {
 }
 
 function switchContainer() {
-  document.getElementsByClassName("container0")[0].style.display = "none";
-  document.getElementsByClassName("container1")[0].style.display = "block";
-  document.getElementById("codePreview") += document.getElementById("loremBlock").innerHTML.value;
-}
+    document.getElementsByClassName("container0")[0].style.display = "none";
+    document.getElementsByClassName("container1")[0].style.display = "block";    
+    document.getElementById("codePreview").textContent = document.getElementById("loremBlock").innerHTML;
+    document.getElementById("loremBlock").style.display = "none";
+  } 
+  function switchContainer1() {
+    document.getElementsByClassName("container0")[0].style.display = "block";
+    document.getElementsByClassName("container1")[0].style.display = "none";
+    document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
+  }
 
-function switchContainer1() {
-  document.getElementsByClassName("container0")[0].style.display = "block";
-  document.getElementsByClassName("container1")[0].style.display = "none";
-  document.getElementById("pushBlock") = document.getElementById("codePreview").innerHTML.value;
-}
 
 function createTable() {
   const form = document.getElementById("tableForm").elements;
@@ -104,12 +105,18 @@ function resetModal(type) {
 //     document.querySelector("button.close").click();
 // }
 
-// function switchContainer() {
-//   if(document.getElementsByClassName("cell")[0]) {
-//       document.getElementsByClassName("container0")[0].style.display = "none";
-//       document.getElementsByClassName("container1")[0].style.display = "block";
-//     }else if(document.getElementsByClassName("cell")[13]){ //якщо onclick="switchContainer()"
-//       document.getElementsByClassName("container0")[0].style.display = "block";
-//       document.getElementsByClassName("container1")[0].style.display = "none";
-//     }
+// function switchContainer(num) {
+//   const index0 = document.getElementsByClassName("container0");
+//   const index1 = document.getElementsByClassName("container1");
+//   if (num = 0) {
+//     index0[0].style.display = "none";
+//     index1[0].style.display = "block";
+//     document.getElementById("codePreview").textContent = document.getElementById("loremBlock").innerHTML;
+//     document.getElementById("loremBlock").style.display = "none";
+//   } else if (num = 1) {
+//     index0[0].style.display = "block";
+//     index1[0].style.display = "none";     
+//     document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
+//   }
 // }
+//B html поставити також switchContainer(num) 0 і 1
