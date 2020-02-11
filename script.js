@@ -36,7 +36,7 @@ function doLogin() {
 function switchContainer() {
   document.getElementsByClassName("container0")[0].style.display = "none";
   document.getElementsByClassName("container1")[0].style.display = "block";
-  document.getElementById("codePreview") = document.getElementById("loremBlock").innerHTML.value;
+  document.getElementById("codePreview") += document.getElementById("loremBlock").innerHTML.value;
 }
 
 function switchContainer1() {
