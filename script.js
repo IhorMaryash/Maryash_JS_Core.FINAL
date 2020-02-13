@@ -1,14 +1,66 @@
-const setButtons = () => {};
+const toggleMultiBlock = document.getElementById("toggle-multiple");
+const toggleMultiStyleBlock = document.getElementById("toggle-multi-style");
+const toggleSingleBlock = document.getElementById("toggle-single");
 
-function addStyleToLorem(index, cssValue) {
+toggleMultiBlock.addEventListener("click", function (event) {
+  const elem = event.target.closest("button");
+  const elemClasses = [...elem.classList];
+  if (elemClasses.includes("toggle-in")) {
+    elem.classList.remove("toggle-in");
+  } else {
+    elem.classList.add("toggle-in");
+  }
+})
+
+toggleMultiStyleBlock.addEventListener("click", function (event) {
+  const buttonGroup = toggleMultiStyleBlock.querySelectorAll("button");
+  const elem = event.target.closest("button");
+  const elemClasses = [...elem.classList];
+  if (elemClasses.includes("toggle-in")) {
+    buttonGroup.forEach(btn => btn.classList.remove("toggle-in"));
+  } else {
+    buttonGroup.forEach(btn => btn.classList.remove("toggle-in"));
+    elem.classList.add("toggle-in");
+  }
+})
+
+toggleSingleBlock.addEventListener("click", function (event) {
+  const buttonGroup = toggleSingleBlock.querySelectorAll("button");
+  const elem = event.target.closest("button");
+  buttonGroup.forEach(btn => btn.classList.remove("toggle-in"));
+  elem.classList.add("toggle-in");
+})
+
+function toggleStyleToLorem(index, cssAtr, cssValue) {
+  const DOMElement = document.querySelectorAll(index)[0];
+  if (DOMElement.style[cssAtr] === cssValue) {
+    addStyleToLorem(index, cssAtr, "");
+  } else {
+    addStyleToLorem(index, cssAtr, cssValue);
+  }
+}
+
+function addStyleToLorem(index, cssAtr, cssValue) {
   const DOMContainer = document.querySelectorAll(index);
-  DOMContainer.forEach(DOMNode => DOMNode.setAttribute("style", cssValue));
+  DOMContainer.forEach(DOMNode => DOMNode.style[cssAtr] = cssValue);
 }
 
-function addStylefromModal(index, cssValue) {
-  this.addStyleToLorem(index, cssValue);
-  document.querySelector("button.close").click();
+function addStylefromModal(index, cssAtr, cssValue) {
+  this.addStyleToLorem(index, cssAtr, cssValue);
+  $(".modal").modal("hide");
 }
+
+// function for get files path /styles/img/
+  function getCustomImage() {
+    const file = document.getElementById("inputGroupFile").value;
+    const fileName = file.split(`\\`).pop();
+    const docUrl = `url(./styles/img/${fileName})`;
+    this.addStyleToLorem('#bodyarea', 'background-image', docUrl)
+    $(".modal").modal("hide");
+    }
+  // investigate how to get files path
+  // any advice from lector since it's secure info not provided by browsers
+
 
 function doLogin() {
   const login = document.getElementById("userLogin").value;
@@ -34,16 +86,16 @@ function doLogin() {
 }
 
 function switchContainer() {
-    document.getElementsByClassName("container0")[0].style.display = "none";
-    document.getElementsByClassName("container1")[0].style.display = "block";    
-    document.getElementById("codePreview").textContent = document.getElementById("loremBlock").innerHTML;
-    document.getElementById("loremBlock").style.display = "none";
-  } 
-  function switchContainer1() {
-    document.getElementsByClassName("container0")[0].style.display = "block";
-    document.getElementsByClassName("container1")[0].style.display = "none";
-    document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
-  }
+  document.getElementsByClassName("container0")[0].style.display = "none";
+  document.getElementsByClassName("container1")[0].style.display = "block";
+  document.getElementById("codePreview").textContent = document.getElementById("loremBlock").innerHTML;
+  document.getElementById("loremBlock").style.display = "none";
+}
+function switchContainer1() {
+  document.getElementsByClassName("container0")[0].style.display = "block";
+  document.getElementsByClassName("container1")[0].style.display = "none";
+  document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
+}
 
 
 function createTable() {
@@ -70,7 +122,6 @@ function createUlOrOl(type) {
   const ulTextnode = document.createTextNode(liWrap);
   $(".modal").modal("hide");
   listNode.appendChild(ulTextnode);
-  console.log(document.getElementById("codePreview").value)
   document.getElementById("codePreview").value += `${liWrap}`;
   document.getElementById("pushBlock").appendChild(listNode).innerHTML = liWrap;
 }

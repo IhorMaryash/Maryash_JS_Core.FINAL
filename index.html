@@ -16,47 +16,53 @@
         <header class="header">
             <div class="menubar">    
                 <div class="editor">
-                    <button type="button" class="cell" disabled
-                    onclick="switchContainer()">                        
+                    <button type="button" 
+                            class="cell"
+                            disabled
+                            onclick="switchContainer()">                        
                         <i class="fas fa-code"></i>
                     </button>
                 </div>
                 <div class="editor">
-                    <button type="button"
-                            class="cell"
-                            onclick="addStyleToLorem('#loremBlock p','font-weight: bold;')">
-                        <i class="fas fa-bold"></i>
-                    </button>
-                    <button type="button"
-                            class="cell"
-                            onclick="addStyleToLorem('#loremBlock p','font-style: italic;')">
-                        <i class="fas fa-italic"></i>
-                    </button>
-                    <button type="button"
-                            class="cell"
-                            onclick="addStyleToLorem('#loremBlock p','text-decoration: underline;')">
-                        <i class="fas fa-underline"></i>
-                    </button>
-                    <button type="button"
-                            class="cell"
-                            onclick="addStyleToLorem('#loremBlock p','text-decoration: line-through;')">
-                        <i class="fas fa-strikethrough"></i>
-                    </button>
+                    <div id="toggle-multiple">
+                        <button type="button"
+                                class="cell"
+                                onclick="toggleStyleToLorem('#loremBlock p','font-weight', 'bold')">
+                            <i class="fas fa-bold"></i>
+                        </button>
+                        <button type="button"
+                                class="cell"
+                                onclick="toggleStyleToLorem('#loremBlock p','font-style', 'italic')">
+                            <i class="fas fa-italic"></i>
+                        </button>
+                    </div>
+                    <div id="toggle-multi-style">
+                        <button type="button"
+                                class="cell"
+                                onclick="toggleStyleToLorem('#loremBlock p','text-decoration', 'underline')">
+                            <i class="fas fa-underline"></i>
+                        </button>
+                        <button type="button"
+                                class="cell"
+                                onclick="toggleStyleToLorem('#loremBlock p','text-decoration', 'line-through')">
+                            <i class="fas fa-strikethrough"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="editor">
+                <div class="editor" id="toggle-single">
                     <button type="button" 
-                            class="cell" 
-                            onclick="addStyleToLorem('#loremBlock p','text-align: left;')">
+                            class="cell toggle-in" 
+                            onclick="addStyleToLorem('#loremBlock p','text-align', 'left')">
                         <i class="fas fa-align-left"></i>
                     </button>
                     <button type="button" 
                             class="cell" 
-                            onclick="addStyleToLorem('#loremBlock p','text-align: center;')">
+                            onclick="addStyleToLorem('#loremBlock p','text-align', 'center')">
                         <i class="fas fa-align-center"></i>
                     </button>
                     <button type="button" 
                             class="cell" 
-                            onclick="addStyleToLorem('#loremBlock p','text-align: right;')">
+                            onclick="addStyleToLorem('#loremBlock p','text-align', 'right')">
                         <i class="fas fa-align-right"></i>
                     </button>
                 </div>
@@ -74,17 +80,17 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownForFont">
                             <ul>
                                 <li style="font-family:Arial"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: italic;')">Arial</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'italic')">Arial</li>
                                 <li style="font-family:Georgia"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: Georgia;')">Georgia</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'Georgia')">Georgia</li>
                                 <li style="font-family:Impact"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: Impact;')">Impact</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'Impact')">Impact</li>
                                 <li style="font-family:Tachoma"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: Tachoma;')">Tachoma</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'Tachoma')">Tachoma</li>
                                 <li style="font-family:Times New Roman"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: Times New Roman;')">Times New Roman</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'Times New Roman')">Times New Roman</li>
                                 <li style="font-family:Verdana"
-                                    onclick="addStyleToLorem('#loremBlock p','font-family: Verdana;')">Verdana</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-family', 'Verdana')">Verdana</li>
                             </ul>
                         </div>
                     </div>
@@ -100,21 +106,21 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownForTextSize">
                             <ul>
                                 <li style="font-size: 12px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 12px;')">12px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '12px')">12px</li>
                                 <li style="font-size: 14px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 14px;')">14px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '14px')">14px</li>
                                 <li style="font-size: 16px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 16px;')">16px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '16px')">16px</li>
                                 <li style="font-size: 18px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 18px;')">18px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '18px')">18px</li>
                                 <li style="font-size: 20px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 20px;')">20px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '20px')">20px</li>
                                 <li style="font-size: 22px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 22px;')">22px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '22px')">22px</li>
                                 <li style="font-size: 25px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 25px;')">25px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '25px')">25px</li>
                                 <li style="font-size: 30px;"
-                                    onclick="addStyleToLorem('#loremBlock p','font-size: 30px;')">30px</li>
+                                    onclick="addStyleToLorem('#loremBlock p','font-size', '30px')">30px</li>
                             </ul>
                         </div>
                     </div>
@@ -139,67 +145,67 @@
                                     <ul>
                                         <li class="block2 block"                                            
                                         style="background-color:red;"
-                                        onclick="addStylefromModal('#loremBlock p','color: red;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'red')"></li>
                                         <li class="block2 block"
                                         style="background-color:green;"
-                                        onclick="addStylefromModal('#loremBlock p','color: green;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'green')"></li>
                                         <li class="block2 block"
                                         style="background-color:yellow;"
-                                        onclick="addStylefromModal('#loremBlock p','color: yellow;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'yellow')"></li>
                                         <li class="block2 block"
                                         style="background-color:pink;"
-                                        onclick="addStylefromModal('#loremBlock p','color: pink;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'pink')"></li>
                                         <li class="block2 block"
                                         style="background-color:brown;"
-                                        onclick="addStylefromModal('#loremBlock p','color: brown;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'brown')"></li>
                                         <li class="block2 block"
                                         style="background-color:black;"
-                                        onclick="addStylefromModal('#loremBlock p','color: black;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'black')"></li>
                                         <li class="block2 block"
                                         style="background-color:orange;"
-                                        onclick="addStylefromModal('#loremBlock p','color: orange;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'orange')"></li>
                                         <li class="block2 block"
                                         style="background-color:blue;"
-                                        onclick="addStylefromModal('#loremBlock p','color: blue;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'blue')"></li>
                                         <li class="block2 block"
                                         style="background-color:bisque;"
-                                        onclick="addStylefromModal('#loremBlock p','color: bisque;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'bisque')"></li>
                                         <li class="block2 block"
                                         style="background-color:olive;"
-                                        onclick="addStylefromModal('#loremBlock p','color: olive;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'olive')"></li>
                                         <li class="block2 block"
                                         style="background-color:aqua;"
-                                        onclick="addStylefromModal('#loremBlock p','color: aqua;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'aqua')"></li>
                                         <li class="block2 block"
                                         style="background-color: darkcyan;"
-                                        onclick="addStylefromModal('#loremBlock p','color: darkcyan;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'darkcyan')"></li>
                                         <li class="block2 block"
                                         style="background-color:salmon;"
-                                        onclick="addStylefromModal('#loremBlock p','color: salmon;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'salmon')"></li>
                                         <li class="block2 block"
                                         style="background-color:purple;"
-                                        onclick="addStylefromModal('#loremBlock p','color: purple;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'purple')"></li>
                                         <li class="block2 block"
                                         style="background-color:orchid;"
-                                        onclick="addStylefromModal('#loremBlock p','color: orchid;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'orchid')"></li>
                                         <li class="block2 block"
                                         style="background-color:coral;"
-                                        onclick="addStylefromModal('#loremBlock p','color: coral;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'coral')"></li>
                                         <li class="block2 block"
                                         style="background-color:crimson;"
-                                        onclick="addStylefromModal('#loremBlock p','color: crimson;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'crimson')"></li>
                                         <li class="block2 block"
                                         style="background-color:indigo;"
-                                        onclick="addStylefromModal('#loremBlock p','color: indigo;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'indigo')"></li>
                                         <li class="block2 block"
                                         style="background-color:violet;"
-                                        onclick="addStylefromModal('#loremBlock p','color: violet;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'violet')"></li>
                                         <li class="block2 block"
                                         style="background-color:maroon;"
-                                        onclick="addStylefromModal('#loremBlock p','color: maroon;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'maroon')"></li>
                                         <li class="block2 block"
                                         style="background-color:grey;"
-                                        onclick="addStylefromModal('#loremBlock p','color: grey;')"></li>
+                                        onclick="addStylefromModal('#loremBlock p','color', 'grey')"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -235,105 +241,108 @@
                                         <ul class=" imgbg">
                                             <li class="block2 block"
                                             style="background-color:red;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: red;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'red')"></li>
                                             <li class="block2 block"
                                             style="background-color:green;"
-                                               onclick="addStylefromModal('#bodyarea','background-color: green;')"></li>
+                                               onclick="addStylefromModal('#bodyarea','background-color', 'green')"></li>
                                             <li class="block2 block"
                                             style="background-color:yellow;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: yellow;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'yellow')"></li>
                                             <li class="block2 block"
                                             style="background-color:pink;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: pink;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'pink')"></li>
                                             <li class="block2 block"
                                             style="background-color:brown;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: brown;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'brown')"></li>
                                             <li class="block2 block"
                                             style="background-color:black;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: black;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'black')"></li>
                                             <li class="block2 block"
                                             style="background-color:orange;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: orange;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'orange')"></li>
                                             <li class="block2 block"
                                             style="background-color:blue;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: blue;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'blue')"></li>
                                             <li class="block2 block"
                                             style="background-color:bisque;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: bisque;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'bisque')"></li>
                                             <li class="block2 block"
                                             style="background-color:olive;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: olive;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'olive')"></li>
                                             <li class="block2 block"
                                             style="background-color:aqua;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: aqua;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'aqua')"></li>
                                             <li class="block2 block"
                                             style="background-color: darkcyan;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: darkcyan;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'darkcyan')"></li>
                                             <li class="block2 block"
                                             style="background-color:salmon;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: salmon;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'salmon')"></li>
                                             <li class="block2 block"
                                             style="background-color:purple;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: purple;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'purple')"></li>
                                             <li class="block2 block"
                                             style="background-color:orchid;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: orchid;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'orchid')"></li>
                                             <li class="block2 block"
                                             style="background-color:coral;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: coral;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'coral')"></li>
                                             <li class="block2 block"
                                             style="background-color:crimson;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: crimson;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'crimson')"></li>
                                             <li class="block2 block"
                                             style="background-color:indigo;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: indigo;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'indigo')"></li>
                                             <li class="block2 block"
                                             style="background-color:violet;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: violet;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'violet')"></li>
                                             <li class="block2 block"
                                             style="background-color:maroon;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: maroon;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'maroon')"></li>
                                             <li class="block2 block"
                                             style="background-color:grey;"
-                                            onclick="addStylefromModal('#bodyarea','background-color: grey;')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-color', 'grey')"></li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane fade modal-body" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                         <ul class="imgbg" id="">
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/3D/2/space-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/3D/2/space-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/3D/2/space-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/city/7/Hearst-Castle-California-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/city/7/Hearst-Castle-California-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/city/7/Hearst-Castle-California-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/city/9/San-Francisco-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/city/9/San-Francisco-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/city/9/San-Francisco-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/flower/1/camomile-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/flower/1/camomile-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/flower/1/camomile-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/animated-cartoon/8/Finding-Nemo-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/animated-cartoon/8/Finding-Nemo-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/animated-cartoon/8/Finding-Nemo-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/poezda/3/3-oboi-poezda-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/poezda/3/3-oboi-poezda-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/poezda/3/3-oboi-poezda-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/nature/1/lake-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/1/lake-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/nature/1/lake-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/nature/5/coast-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/5/coast-wallpaper-1366x768.jpg)')"></li>
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/nature/5/coast-wallpaper-1366x768.jpg)')"></li>
                                             <li class="block2 image-bg"
                                             style="background-image: url(http://fanoboi.com/nature/82/basin-wallpaper-1366x768.jpg);"
-                                            onclick="addStylefromModal('#bodyarea','background-image: url(http://fanoboi.com/nature/82/basin-wallpaper-1366x768.jpg)')"></li>                                            
+                                            onclick="addStylefromModal('#bodyarea','background-image', 'url(http://fanoboi.com/nature/82/basin-wallpaper-1366x768.jpg)')"></li>                                            
                                         </ul>
                                     </div>
                                     <div class="tab-pane fade modal-body" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                         <div  class="input-group textColor">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile" accept="img/*"
-                                                onclick="addStylefromModal('#bodyarea','background-image: url(styles/img/*)')">
+                                                <input type="file" 
+                                                       class="custom-file-input"
+                                                       id="inputGroupFile" 
+                                                       accept="img/*"
+                                                       onChange="getCustomImage()">
                                                 <label class="btn-file custom-file-label" for="inputGroupFile">
                                                     <span class="custom-file-label">Choose file</span>
                                                 </label>
