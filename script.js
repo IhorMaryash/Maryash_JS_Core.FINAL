@@ -58,10 +58,7 @@ function addStylefromModal(index, cssAtr, cssValue) {
     this.addStyleToLorem('#bodyarea', 'background-image', docUrl)
     $(".modal").modal("hide");
     }
-  // investigate how to get files path
-  // any advice from lector since it's secure info not provided by browsers
-
-
+  
 function doLogin() {
   const login = document.getElementById("userLogin").value;
   const psw = document.getElementById("userPassword").value;
@@ -96,7 +93,6 @@ function switchContainer1() {
   document.getElementsByClassName("container1")[0].style.display = "none";
   document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
 }
-
 
 function createTable() {
   const form = document.getElementById("tableForm").elements;
@@ -146,28 +142,3 @@ function resetModal(type) {
   }
 }
 
-// function addStyleToLorem(cssValue) {
-//     const DOMContainer = document.querySelectorAll("#loremBlock p");
-//     DOMContainer.forEach(DOMNode => DOMNode.setAttribute("style", cssValue));
-// }
-
-// function addStylefromModal(cssValue) {
-//     this.addStyleToLorem(cssValue);
-//     document.querySelector("button.close").click();
-// }
-
-// function switchContainer(num) {
-//   const index0 = document.getElementsByClassName("container0");
-//   const index1 = document.getElementsByClassName("container1");
-//   if (num = 0) {
-//     index0[0].style.display = "none";
-//     index1[0].style.display = "block";
-//     document.getElementById("codePreview").textContent = document.getElementById("loremBlock").innerHTML;
-//     document.getElementById("loremBlock").style.display = "none";
-//   } else if (num = 1) {
-//     index0[0].style.display = "block";
-//     index1[0].style.display = "none";     
-//     document.getElementById("pushBlock").innerHTML = document.getElementById("codePreview").value;
-//   }
-// }
-//B html поставити також switchContainer(num) 0 і 1
